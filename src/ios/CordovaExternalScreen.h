@@ -14,6 +14,7 @@
 
 - (void) hasExternalScreen:(CDVInvokedUrlCommand*)command;
 - (void) loadURL:(CDVInvokedUrlCommand*)command;
+- (void) invokeJavaScript:(CDVInvokedUrlCommand*)command;
 - (void) registerEventsListener:(CDVInvokedUrlCommand*)command;
 
 - (bool) hasExternalScreen;

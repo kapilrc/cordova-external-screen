@@ -57,6 +57,15 @@
                                 callbackId: command.callbackId];
 }
 
+- (void)invokeJavaScript:(CDVInvokedUrlCommand*)command
+{
+    if ([[UIScreen screens] count] > 1) {
+        NSArray *arguments = command.arguments;
+        NSString *stringObtainedFromJavascript = [arguments objectAtIndex:0];
+        [[self getWebView] evaluateJavaScript:stringObtainedFromJavascript completionHandler:nil];
+    }
+}
+
 - (void)registerEventsListener:(CDVInvokedUrlCommand*)command {
     NSNotificationCenter* center = [NSNotificationCenter defaultCenter];
 

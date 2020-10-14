@@ -9,6 +9,10 @@ class ExternalScreen extends EventEmitter {
     loadUrl(url) {
         return exec("loadURL", [url]);
     }
+
+    invokeJavaScript(msg) {
+        return exec("invokeJavaScript", [msg]);
+    }
 }
 
 exports.createScreenListener = function() {
